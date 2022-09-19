@@ -1,1 +1,1 @@
-script that runs a C file 
+0x05. C - Pointers, arrays and stringsn
