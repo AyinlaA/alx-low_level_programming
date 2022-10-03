@@ -1,1 +1,1 @@
-0x09. C - Static libraries
+Solution to 0x09-static_libraries task
