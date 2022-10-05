@@ -16,16 +16,16 @@ int _atoi(char *s)
 	n = 0;
 	len = 0;
 	f = 0;
-	digit = 0; 	
-	
+	digit = 0;
+
 	while (s[len] != '\0')
 		len++;
-	
+
 	while (i < len && f == 0)
 	{
 		if (s[i] == '-')
 			++d;
-		
+
 		if (s[i] >= '0' && s[i] <= '9')
 		{
 			digit = s[i] - '0';
@@ -42,7 +42,7 @@ int _atoi(char *s)
 
 	if (f == 0)
 		return (0);
-	
+
 	return (n);
 }
 
@@ -56,7 +56,7 @@ int _atoi(char *s)
 int main(int argc, char *argv[])
 {
 	int sum, num, i, j, k;
-	
+
 	sum = 0;
 
 	for (i = 1; i < argc; i++)

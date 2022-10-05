@@ -20,7 +20,7 @@ int _atoi(char *s)
 
 	while (s[len] != '\0')
 		len++;
-	
+
 	while (i < len && f == 0)
 	{
 		if (s[i] == '-')
@@ -66,8 +66,8 @@ int main(int argc, char *argv[])
 	num1 = _atoi(argv[1]);
 	num2 = _atoi(argv[2]);
 	result = num1 * num2;
-	
+
 	printf("%d\n", result);
-	
+
 	return (0);
 }
