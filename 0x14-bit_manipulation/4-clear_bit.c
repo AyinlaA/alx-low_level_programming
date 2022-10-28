@@ -1,22 +1,22 @@
 /**
- * flip_bits - return number of bits that would need to be flipped to
- * transform one number to another
- *
- * @n: first number
- * @m: second number
- *
- * Return: number of bits to flip to convert numbers
+ * clear_bit - clear bit to 0 at given index
+ * @n: number
+ * @index: index within binary number
+ * Return: 1 if success, or -1 if error
  */
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int xorval = n ^ m;
-	unsigned int count = 0;
+	unsigned long int max_bits;
+	unsigned long int mask = 1;
 
-	while (xorval)
-	{
-		if (xorval & 1ul)
-			count++;
-		xorval = xorval >> 1;
-	}
-	return (count);
+	/* validate index is not out of range */
+	max_bits = (sizeof(unsigned long int) * 8);
+	if (index > max_bits)
+		return (-1);
+
+	/* create mask with 0 at index (...11011...) to work on that index */
+	mask = ~(mask << index);
+	*n = (*n & mask);
+
+	return (1);
 }
