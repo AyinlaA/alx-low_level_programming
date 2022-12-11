@@ -93,7 +93,8 @@ int main(int argc, char **argv)
 		0x723161513346655a, 0x6b756f494b646850 };
 	(void) argc;
 
-	for (len = 0; argv[1][len]; len++);
+	for (len = 0; argv[1][len]; len++)
+		;
 	/* ----------- f1 ----------- */
 	keygen[0] = ((char *)alph)[(len ^ 59) & 63];
 	/* ----------- f2 ----------- */
@@ -105,7 +106,8 @@ int main(int argc, char **argv)
 	}
 	keygen[1] = ((char *)alph)[(ch ^ 79) & 63];
 	/* ----------- f3 ----------- */
-	ch = 1;	vch = 0;
+	ch = 1;
+	vch = 0;
 	while (vch < len)
 	{
 		ch = argv[1][vch] * ch;
