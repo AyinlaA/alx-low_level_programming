@@ -24,10 +24,10 @@ int f4(char *usrn, int len)
 			ch = usrn[vch];
 		vch += 1;
 	}
-	
+
 	srand(ch ^ 14);
 	rand_num = rand();
-	
+
 	return (rand_num & 63);
 }
 
